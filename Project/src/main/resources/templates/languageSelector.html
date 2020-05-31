@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Language Selector</title>
+</head>
+<body>
+    <main>
+        <span th:text="#{lang.change}"></span>:
+        <select id="locales">
+            <option></option>
+            <option value="engels" th:text="#{lang.eng}"></option>
+            <option value="nederlands" th:text="#{lang.nl}"></option>
+        </select>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+    </script>
+    <script type="text/javascript" src="/language.js">
+    </script>
+</body>
+</html>

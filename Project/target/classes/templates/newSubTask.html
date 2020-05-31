@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" xmlns:th="http://www.w3.org/1999/xhtml">
+    <title>New Subtask</title>
+</head>
+<body>
+
+    <main>
+
+        <nav th:replace="header"></nav>
+        <select th:replace="languageSelector"></select>
+
+
+        <form th:action="${'/tasks/' + task.id + '/sub/create'}" method="post" th:object="${task}">
+
+            <div>
+                <label for="name">Name: </label>
+                <input id="name" name="name" type="text">
+            </div>
+            <div>
+                <label for="description">Description: </label>
+                <input id="description" name="description" type="text">
+            </div>
+
+            <input type="submit" value="Add new subtask">
+        </form>
+    </main>
+</body>
+</html>

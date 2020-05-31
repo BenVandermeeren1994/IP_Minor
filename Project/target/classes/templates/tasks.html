@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Tasks list</title>
+</head>
+<body>
+    <main>
+        <nav th:replace="header"></nav>
+        <select th:replace="languageSelector"></select>
+
+        <h4>Tasks</h4>
+
+        <div th:if="${#lists.isEmpty(tasks)}">
+            <p th:text="#{noTask}">No tasks left to do!</p>
+        </div>
+
+        <div th:unless="${#lists.isEmpty(tasks)}">
+            <table>
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Due date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="task:${tasks}">
+                    <td th:text="*{task.name}"></td>
+                    <td th:text="*{task.dueDateToString}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>

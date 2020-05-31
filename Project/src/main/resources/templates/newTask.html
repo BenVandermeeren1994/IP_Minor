@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>New Task</title>
+</head>
+<body>
+    <main>
+
+        <nav th:replace="header"></nav>
+        <select th:replace="languageSelector"></select>
+
+
+        <form method="post" action="/tasks" th:object="${task}">
+            <h4>Add Task</h4>
+            <div>
+                <label for="name" th:text="#{name}"> </label>
+                <input th:field="*{name}" type="text" name="name" id="name" required>
+            </div>
+            <div>
+                <label for="dueDate" th:text="#{dueDate}"> </label>
+                <input th:field="*{dueDate}" type="datetime-local" name="dueDate" id="dueDate" required>
+            </div>
+            <div>
+                <label for="description" th:text="#{desc}"></label>
+                <input th:field="*{description}" type="text" name="description" id="description" required>
+            </div>
+            <input type="submit" value="AddTask">
+        </form>
+    </main>
+
+</body>
+</html>

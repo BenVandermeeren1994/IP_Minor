@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Detail</title>
+</head>
+<body>
+
+    <main>
+
+        <nav th:replace="header"></nav>
+        <select th:replace="languageSelector"></select>
+
+
+        <h4>Task detail</h4>
+        <table>
+            <thead>
+            <tr>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Title: </td>
+                <td th:text="*{task.name}"></td>
+            </tr>
+            <tr>
+                <td>Description: </td>
+                <td th:text="*{task.dueDate}"></td>
+            </tr>
+            <tr>
+                <td>Due date: </td>
+                <td th:text="*{task.name}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>
